@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class Agenda {
+public class Agenda implements Agenda1 {
     private List<Persona> contacts; // Lista de Contacto
 
     public Agenda() {
@@ -14,6 +14,7 @@ public class Agenda {
      * @param name
      * @param phone
      */
+    @Override
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Persona c : contacts) {
@@ -34,6 +35,7 @@ public class Agenda {
      *
      * @param name
      */
+    @Override
     public void removeContact(String name) {
         Iterator<Persona> it = contacts.iterator();
 
@@ -51,6 +53,7 @@ public class Agenda {
      * @param oldPhone
      * @param newPhone
      */
+    @Override
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -69,6 +72,7 @@ public class Agenda {
      *
      * @return
      */
+    @Override
     public List<Persona> getContacts() {
         return this.contacts;
     }
